@@ -1,0 +1,152 @@
+/* GENERAL STYLING */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* "Hello" Screen */
+#hello-screen {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    animation: fadeOut 3s forwards;
+}
+
+/* Main Content Styling */
+.phone-container {
+    width: 414px;
+    height: 896px;
+    max-width: 100%;
+    max-height: 100vh;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Buttons */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+#button1, #button2 {
+    width: 120px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#button1 {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#button1:hover {
+    background-color: #ff2e5a;
+}
+
+#button2 {
+    background-color: #ffcccc;
+    color: black;
+}
+
+#button2:hover {
+    background-color: #ffb3b3;
+}
+
+/* Confetti Screen */
+#confetti-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Adds a subtle dimming effect */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Hide old elements when confetti screen appears */
+.hidden {
+    display: none !important;
+}
+
+/* Video Box */
+#video-container {
+    width: 50vw;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#celebration-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeOut {
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeIn {
+    100% { opacity: 1; }
+}
+
+/* Button Tilt Effect */
+.tilt-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tilt-wrapper.tilt {
+    animation: tilt 0.3s ease-in-out;
+}
+
+@keyframes tilt {
+    50% { transform: rotate(-3deg); }
+}
